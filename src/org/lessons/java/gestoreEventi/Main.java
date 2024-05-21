@@ -1,5 +1,6 @@
 package org.lessons.java.gestoreEventi;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -45,6 +46,25 @@ public class Main {
         // Stampare l'evento prenotato
         System.out.println("Evento prenotato:");
         System.out.println(evento);
+        
+     // Chiedere all'utente se l'evento è un concerto
+        System.out.println("L'evento è un concerto? (si/no):");
+        scanner.nextLine(); // Consuma il newline pendente
+        String risposta = scanner.nextLine();
+
+        if (risposta.equals("si")) {
+            System.out.println("Inserisci l'ora del concerto (formato: HH:mm):");
+            LocalTime ora = LocalTime.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("HH:mm"));
+
+            System.out.println("Inserisci il prezzo del concerto:");
+            double prezzo = scanner.nextDouble();
+
+            Concerto concerto = new Concerto(titolo, data, numeroPostiTotale, ora, prezzo);
+
+            // Stampare l'evento prenotato come concerto
+            System.out.println("il tuo evento prenotato è un Concerto :");
+            System.out.println(concerto);
+        }
       
     }
 }
