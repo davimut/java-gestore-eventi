@@ -15,13 +15,14 @@ public class Main {
         System.out.println("Inserisci la data dell'evento (formato: dd-MM-yyyy):");
         LocalDate data = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         
-        System.out.println("Data: " + data);
-
+        
         System.out.println("Inserisci il numero totale di posti disponibili:");
         int numeroPostiTotale = scanner.nextInt();
 
         // Creazione dell'oggetto Eventi
         Eventi evento = new Eventi(titolo, data, numeroPostiTotale);
+
+         System.out.println("Data: " + evento.getData());
 
         // Chiedere all'utente quante prenotazioni vuole fare
         System.out.println("Quante prenotazioni vuoi fare?");
