@@ -54,14 +54,17 @@ public class Eventi {
 		return numeroPostiPrenotati;
 	}
 
-	public String prenota() {
-
-		if (numeroPostiPrenotati >= numeroPostiTotale) {
-			return "Non ci sono posti disponibili.";
+		public String prenota() {
+		    // Controlla se il numero di posti prenotati è già uguale o superiore al numero totale di posti disponibili
+		    if (numeroPostiPrenotati >= numeroPostiTotale) {
+		        // Se tutti i posti sono già prenotati, restituisce un messaggio che informa che non ci sono posti disponibili
+		        return "Non ci sono posti disponibili.";
+		    }
+		    // Se ci sono ancora posti disponibili, incrementa il numero di posti prenotati di 1
+		    numeroPostiPrenotati++;
+		    // Restituisce un messaggio che informa che la prenotazione è stata effettuata con successo
+		    return "Prenotazione effettuata con successo.";
 		}
-		numeroPostiPrenotati++;
-		return "Prenotazione effettuata con successo.";
-	}
 
 	public String disdici() {
 		if (numeroPostiPrenotati <= 0) {
