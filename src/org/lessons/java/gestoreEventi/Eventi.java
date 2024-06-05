@@ -11,6 +11,7 @@ public class Eventi {
 	public Eventi(String titolo, LocalDate data, int numeroPostiTotale) {
 		this.titolo = titolo;
 		this.numeroPostiPrenotati = 0;
+		this.numeroPostiTotale = numeroPostiTotale;
 		this.data = data;
 
 		if (data.isBefore(LocalDate.now())) {

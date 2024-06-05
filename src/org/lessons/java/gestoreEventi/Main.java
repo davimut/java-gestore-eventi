@@ -9,8 +9,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        boolean continua = true;
-        while (continua) {
             // Input dei dati dell'evento
             System.out.println("Inserisci il titolo dell'evento:");
             String titolo = scanner.nextLine();
@@ -68,14 +66,7 @@ public class Main {
                 System.out.println(concerto);
             }
 
-            // Chiedere all'utente se vuole inserire un altro evento
-            System.out.println("Vuoi inserire un altro evento? (si/no):");
-            String continuaRisposta = scanner.nextLine();
-
-            if (continuaRisposta.equalsIgnoreCase("no")) {
-                continua = false;
-            }
         }
 
     }
-}
+
