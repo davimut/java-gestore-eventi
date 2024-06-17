@@ -18,11 +18,8 @@ public class Concerto extends Eventi {
     }
 
     public void setOra(LocalTime ora) {
-        this.ora = ora;
-    }
-
-    public double getPrezzo() {
-        return prezzo;
+        this.ora = ora; 
+    
     }
 
     public void setPrezzo(double prezzo) {

@@ -1,5 +1,4 @@
 package org.lessons.java.gestoreEventi;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -13,11 +12,12 @@ public class Main {
             System.out.println("Inserisci il titolo dell'evento:");
             String titolo = scanner.nextLine();
 
-            System.out.println("Inserisci la data dell'evento (formato: dd-MM-yyyy):");
-            LocalDate data = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-
+         
             System.out.println("Inserisci il numero totale di posti disponibili:");
             int numeroPostiTotale = Integer.parseInt(scanner.nextLine());
+  
+            System.out.println("Inserisci la data dell'evento (formato: dd-MM-yyyy):");
+            LocalDate data = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 
             // Creazione dell'oggetto Eventi
             Eventi evento = new Eventi(titolo, data, numeroPostiTotale);
