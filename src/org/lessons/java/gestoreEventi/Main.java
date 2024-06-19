@@ -3,14 +3,15 @@ package org.lessons.java.gestoreEventi;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        List<Eventi> programmaEventi = new ArrayList<>();
+
+        System.out.println("Inserisci il titolo del programma di eventi:");
+        String titoloProgramma = scanner.nextLine();
+        ProgrammaEventi programmaEventi = new ProgrammaEventi(titoloProgramma);
 
         boolean aggiungereAltroEvento = true;
 
@@ -50,10 +51,6 @@ public class Main {
                 System.out.println(risultatoDisdetta);
             }
 
-            // Stampare l'evento prenotato
-            System.out.println("Evento prenotato:");
-            System.out.println(evento);
-
             // Chiedere all'utente se l'evento è un concerto
             System.out.println("L'evento è un concerto? (si/no):");
             String risposta = scanner.nextLine();
@@ -72,10 +69,10 @@ public class Main {
                 System.out.println(concerto);
 
                 // Aggiungere il concerto alla lista del programma
-                programmaEventi.add(concerto);
-            } else {   
-            	// Aggiungere l'evento alla lista del programma
-            programmaEventi.add(evento);
+                programmaEventi.aggiungiEvento(concerto);
+            } else {
+                // Aggiungere l'evento alla lista del programma
+                programmaEventi.aggiungiEvento(evento);
             }
 
             // Chiedere se l'utente vuole aggiungere un altro evento
@@ -89,8 +86,6 @@ public class Main {
 
         // Stampare tutti gli eventi nel programma
         System.out.println("Ecco tutti gli eventi nel programma:");
-        for (Eventi e : programmaEventi) {
-            System.out.println(e);
-        }
+        System.out.println(programmaEventi.mostraProgramma());
     }
 }
